@@ -64,12 +64,6 @@ p {
   color: rgba(253, 248, 111, 0.75);
 }
 
-.navbar-link.active {
-  color: rgba(253, 245, 0, 0.75);
-  border-bottom: 2px solid rgb(253, 245, 0);
-  padding-bottom: 5px;
-}
-
 .day-events {
   display: flex;
   flex-direction: column;
