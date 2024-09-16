@@ -34,11 +34,13 @@ export const HistoryPicks = async () => {
 
   return (
     <div>
-      {hasData
-        ? Object.entries(eventByDays)
-            .reverse()
-            .map(([key, val]) => <EventList key={key} events={val} />)
-        : "No event has been published so far"}
+      {hasData ? (
+        Object.entries(eventByDays)
+          .reverse()
+          .map(([key, val]) => <EventList key={key} events={val} />)
+      ) : (
+        <span>No event has been published so far</span>
+      )}
     </div>
   );
 };
