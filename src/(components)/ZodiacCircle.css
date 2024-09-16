@@ -1,0 +1,60 @@
+.orbit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  margin: 20px 0;
+}
+
+.orbit-date {
+  width: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.orbit-zodiacs {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  list-style: none;
+}
+
+.orbit-zodiac {
+  box-sizing: border-box;
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.orbit-zodiac p {
+  font-size: 10px;
+}
+
+.orbit-zodiac.active {
+  background-color: #282828;
+  color: #fff;
+  box-shadow: 0 0 5px 6px rgba(253, 248, 111, 0.75);
+}
+
+.zodiac-container {
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+@keyframes orbit {
+  100% {
+    rotate: 1turn;
+  }
+}
