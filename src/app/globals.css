@@ -60,10 +60,6 @@ p {
   transition: color 0.3s ease;
 }
 
-.navbar-link:hover {
-  color: rgba(253, 248, 111, 0.75);
-}
-
 .day-events {
   display: flex;
   flex-direction: column;
