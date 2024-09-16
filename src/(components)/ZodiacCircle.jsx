@@ -123,7 +123,7 @@ export const ZodiacCircle = ({ stopMonth, stopSign }) => {
               className={`orbit-zodiac ${index === monthIndex ? "active" : ""}`}
               style={{
                 transform: `rotate(${index * 30}deg)
-                        translate(150px)
+                        translate(130px)
                         rotate(-${index * 30}deg)`,
               }}
             >
