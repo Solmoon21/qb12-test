@@ -116,20 +116,20 @@ p {
 .vertical-line {
   width: 2px;
   height: 100px;
-  margin: 0 auto;
-  margin-left: 0.5rem;
+  margin: 0 0.5rem;
+  /* margin-left: 0.5rem; */
   transform: rotate(180deg);
   background-color: #000;
 }
 
 .event-winning {
-  flex-grow: 1;
   display: flex;
   justify-content: space-evenly;
 }
 
 .event-sign,
 .event-month {
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;

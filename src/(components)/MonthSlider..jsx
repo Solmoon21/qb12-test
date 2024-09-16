@@ -8,6 +8,8 @@ export const MonthSlider = ({ stopMonth }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hasSpinned, setHasSpinned] = useState(false);
 
+  const stopMonthIndex = months.findIndex((item) => item.en === stopMonth);
+
   useEffect(() => {
     let count = 0;
 
@@ -16,7 +18,7 @@ export const MonthSlider = ({ stopMonth }) => {
 
       if (stopMonth !== null) {
         count++;
-        if (count > 220 && months[nextIndex] === stopMonth) {
+        if (count > 100 && nextIndex === stopMonthIndex) {
           setHasSpinned(true);
         }
       }
@@ -32,7 +34,7 @@ export const MonthSlider = ({ stopMonth }) => {
     );
 
     return () => clearInterval(intervalId);
-  }, [hasSpinned, stopMonth]);
+  }, [hasSpinned, stopMonth, stopMonthIndex]);
 
   const halfwayIndex = 6;
   const itemHeight = 52;
@@ -76,7 +78,7 @@ export const MonthSlider = ({ stopMonth }) => {
           key={i}
           style={{ transform: `translateY(${determinePlacement(i)}px)` }}
         >
-          <span>{month}</span>
+          <span>{month.cn}</span>
         </p>
       ))}
     </div>

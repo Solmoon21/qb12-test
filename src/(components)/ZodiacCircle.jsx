@@ -21,69 +21,71 @@ import { MonthSlider } from "./MonthSlider.";
 const zodiacs = [
   {
     Component: Leo,
-    name: "Leo",
-    // name: "狮子座",
+    en: "Leo",
+    cn: "狮子座",
   },
   {
     Component: Aries,
-    name: "Aries",
-    // name: "白羊座",
+    en: "Aries",
+    cn: "白羊座",
   },
   {
     Component: Taurus,
-    name: "Taurus",
-    // name: "金牛座",
+    en: "Taurus",
+    cn: "金牛座",
   },
   {
     Component: Gemini,
-    name: "Gemini",
-    // name: "双子座",
+    en: "Gemini",
+    cn: "双子座",
   },
   {
     Component: Cancer,
-    name: "Cancer",
-    // name: "癌症",
+    en: "Cancer",
+    cn: "癌症",
   },
   {
     Component: Virgo,
-    name: "Virgo",
-    // name: "处女座",
+    en: "Virgo",
+    cn: "处女座",
   },
   {
     Component: Libra,
-    name: "Libra",
-    // name: "天秤座",
+    en: "Libra",
+    cn: "天秤座",
   },
   {
     Component: Scorpio,
-    name: "Scorpio",
-    // name: "天蝎座",
+    en: "Scorpio",
+    cn: "天蝎座",
   },
   {
     Component: Sagittarius,
-    name: "Sagittarius",
-    // name: "射手座",
+    en: "Sagittarius",
+    cn: "射手座",
   },
   {
     Component: Capricorn,
-    name: "Capricorn",
-    // name: "摩羯座",
+    en: "Capricorn",
+    cn: "摩羯座",
   },
   {
     Component: Aquarius,
-    name: "Aquarius",
-    // name: "水瓶座",
+    en: "Aquarius",
+    cn: "水瓶座",
   },
   {
     Component: Pisces,
-    name: "Pisces",
-    // name: "双鱼座",
+    en: "Pisces",
+    cn: "双鱼座",
   },
 ];
 
 export const ZodiacCircle = ({ stopMonth, stopSign }) => {
   const [monthIndex, setMonthIndex] = useState(0);
   const [hasSpinned, setHasSpinned] = useState(false);
+
+  const stopSignIndex = zodiacs.findIndex((item) => item.en === stopSign);
 
   useEffect(() => {
     let count = 0;
@@ -93,7 +95,7 @@ export const ZodiacCircle = ({ stopMonth, stopSign }) => {
 
       if (stopSign !== null) {
         count++;
-        if (count > 220 && zodiacs[nextIndex].name === stopSign) {
+        if (count > 100 && nextIndex === stopSignIndex) {
           setHasSpinned(true);
         }
       }
@@ -109,7 +111,7 @@ export const ZodiacCircle = ({ stopMonth, stopSign }) => {
     );
 
     return () => clearInterval(intervalId);
-  }, [hasSpinned, stopSign]);
+  }, [hasSpinned, stopSign, stopSignIndex]);
 
   return (
     <div className="orbit">
@@ -128,7 +130,7 @@ export const ZodiacCircle = ({ stopMonth, stopSign }) => {
               }}
             >
               <Component />
-              <p className="zodiac-name">{zodiac.name}</p>
+              <p className="zodiac-name">{zodiac.cn}</p>
             </li>
           );
         })}

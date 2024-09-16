@@ -13,9 +13,12 @@ import {
   Taurus,
   Virgo,
 } from "../(assets)";
+import { months } from "./consts";
 
-const Event = ({ data, Componenter }) => {
+const Event = ({ data }) => {
   const { time, sign, month } = data;
+
+  // const chineseMonth = months.find((item) => item.en === month).cn;
 
   const convertedDate = new Date(parseInt(time, 10) * 1000);
   const yangonDate = new Date(convertedDate.getTime() + 390 * 60 * 1000);
@@ -55,8 +58,9 @@ const Event = ({ data, Componenter }) => {
   return (
     <li className="event">
       <div className="event-hour">
-        {hourUtc > 0 ? `${hourUtc}:00` : "--"}{" "}
-        {hourUtc === 0 ? "--" : hourUtc > 11 ? "pm" : "am"}
+        {hourUtc > 0 ? `${hourUtc}:00` : "--:--"}
+        {/* {hourUtc === 0 ? "--" : hourUtc > 11 ? "pm" : "am"} */}
+        {hourUtc !== 0 && <span>{hourUtc > 11 ? "pm" : "am"}</span>}
       </div>
       <div className="vertical-line"></div>
       <div className="event-winning">
@@ -64,6 +68,7 @@ const Event = ({ data, Componenter }) => {
           <div className="event-sign-icon">{renderAstrologyIcon(sign)}</div>
           {sign !== "--" ? <p>{sign}</p> : <></>}
         </div>
+        {/* <div className="event-month">{chineseMonth}</div> */}
         <div className="event-month">{month}</div>
       </div>
     </li>

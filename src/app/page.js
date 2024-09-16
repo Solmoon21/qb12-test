@@ -1,4 +1,4 @@
-import { Navbar, TodayPicks } from "@/(components)";
+import { TodayPicks } from "@/(components)";
 import { ZodiacCircle } from "@/(components)/ZodiacCircle";
 import "./app.css";
 
