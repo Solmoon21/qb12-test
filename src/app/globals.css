@@ -51,7 +51,7 @@ p {
   place-items: center;
 }
 
-.navbar-links li:nth-child(3) {
+.navbar-links li:last-child {
   padding-top: 4px;
 }
 

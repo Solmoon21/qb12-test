@@ -13,11 +13,6 @@ export const Navbar = () => {
       <ul className="navbar-links">
         <li>
           <Link href="/" className="navbar-link">
-            <DownloadIcon />
-          </Link>
-        </li>
-        <li>
-          <Link href="/" className="navbar-link">
             <HelpIcon />
           </Link>
         </li>

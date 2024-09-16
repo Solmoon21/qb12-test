@@ -62,7 +62,7 @@ const Event = ({ data, Componenter }) => {
       <div className="event-winning">
         <div className="event-sign">
           <div className="event-sign-icon">{renderAstrologyIcon(sign)}</div>
-          <p>{sign}</p>
+          {sign !== "--" ? <p>{sign}</p> : <></>}
         </div>
         <div className="event-month">{month}</div>
       </div>

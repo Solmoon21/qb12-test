@@ -16,10 +16,10 @@ export default function RootLayout({ children }) {
         {/* <meta content="width=375, initial-scale=1.0" /> */}
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
         <link rel="manifest" href="manifest.json" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon"></link>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body className={inter.className}>
         <Navbar />
