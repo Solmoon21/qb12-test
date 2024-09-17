@@ -13,10 +13,10 @@ export default function Install() {
           <Image
             src={url}
             alt={`Image ${index + 1}`}
-            width="80vw" // Adjust the width
-            height="40vw" // Adjust the height
-            layout="responsive" // Responsive image layout
-            objectFit="cover" // How the image should fit
+            width="80vw"
+            height="40vw"
+            layout="responsive"
+            objectFit="cover"
           />
         </div>
       ))}

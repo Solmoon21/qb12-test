@@ -10,6 +10,11 @@ export const Navbar = () => {
 
   const pathname = usePathname();
 
+  const withoutHistory = pathname.includes("history");
+  const withoutInstall = pathname.includes("install");
+
+  const locale = pathname.split("/")[1];
+
   return (
     <div className="navbar">
       <p className="navbar-logo">
@@ -18,16 +23,27 @@ export const Navbar = () => {
         </Link>
       </p>
       <ul className="navbar-links">
-        <li>
-          <Link href={`${pathname}/install`} className="navbar-link">
-            <DownloadIcon />
-          </Link>
-        </li>
-        <li>
-          <Link href={`${pathname}/history`} className="navbar-link">
-            <HistoryIcon />
-          </Link>
-        </li>
+        {!withoutInstall && (
+          <li>
+            <Link
+              href={`/${locale}/install`}
+              replace={true}
+              className="navbar-link"
+            >
+              <DownloadIcon />
+            </Link>
+          </li>
+        )}
+        {!withoutHistory && (
+          <li>
+            <Link
+              href={`/${locale}/history`}
+              className="navbar-link history-link"
+            >
+              <HistoryIcon />
+            </Link>
+          </li>
+        )}
       </ul>
     </div>
   );
