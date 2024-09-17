@@ -19,11 +19,6 @@ export const Navbar = () => {
       </p>
       <ul className="navbar-links">
         <li>
-          <Link href={`${pathname}/download`} className="navbar-link">
-            <DownloadIcon />
-          </Link>
-        </li>
-        <li>
           <Link href={`${pathname}/help`} className="navbar-link">
             <HelpIcon />
           </Link>
