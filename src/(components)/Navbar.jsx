@@ -1,13 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { DownloadIcon, HistoryIcon, HelpIcon } from "../(assets)";
+import { HistoryIcon, HelpIcon } from "../(assets)";
+import { useTranslations } from "next-intl";
+
 export const Navbar = () => {
+  const t = useTranslations("Index");
+
   return (
     <div className="navbar">
       <p className="navbar-logo">
         <Link href="/" className="navbar-link">
-          Astrology 2D
+          {t("pageTitle")}
         </Link>
       </p>
       <ul className="navbar-links">

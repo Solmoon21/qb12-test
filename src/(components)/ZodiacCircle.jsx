@@ -17,13 +17,9 @@ import {
 } from "../(assets)";
 import "./ZodiacCircle.css";
 import { MonthSlider } from "./MonthSlider.";
+import { useTranslations } from "next-intl";
 
 const zodiacs = [
-  {
-    Component: Leo,
-    name: "Leo",
-    // name: "狮子座",
-  },
   {
     Component: Aries,
     name: "Aries",
@@ -43,6 +39,11 @@ const zodiacs = [
     Component: Cancer,
     name: "Cancer",
     // name: "癌症",
+  },
+  {
+    Component: Leo,
+    name: "Leo",
+    // name: "狮子座",
   },
   {
     Component: Virgo,
@@ -85,6 +86,10 @@ export const ZodiacCircle = ({ stopMonth, stopSign }) => {
   const [monthIndex, setMonthIndex] = useState(0);
   const [hasSpinned, setHasSpinned] = useState(false);
 
+  const stopSignIndex = zodiacs.findIndex((z) => z.name === stopSign);
+
+  const t = useTranslations("Index");
+
   useEffect(() => {
     let count = 0;
 
@@ -93,7 +98,7 @@ export const ZodiacCircle = ({ stopMonth, stopSign }) => {
 
       if (stopSign !== null) {
         count++;
-        if (count > 220 && zodiacs[nextIndex].name === stopSign) {
+        if (count > 100 && nextIndex === stopSignIndex) {
           setHasSpinned(true);
         }
       }
@@ -109,7 +114,7 @@ export const ZodiacCircle = ({ stopMonth, stopSign }) => {
     );
 
     return () => clearInterval(intervalId);
-  }, [hasSpinned, stopSign]);
+  }, [hasSpinned, stopSign, stopSignIndex]);
 
   return (
     <div className="orbit">
@@ -128,7 +133,7 @@ export const ZodiacCircle = ({ stopMonth, stopSign }) => {
               }}
             >
               <Component />
-              <p className="zodiac-name">{zodiac.name}</p>
+              <p className="zodiac-name">{t(`s${index + 1}`)}</p>
             </li>
           );
         })}

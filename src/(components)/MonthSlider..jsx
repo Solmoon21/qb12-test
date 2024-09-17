@@ -3,10 +3,13 @@
 import "./MonthSlider.css";
 import { useEffect, useState } from "react";
 import { months } from "./consts";
+import { useTranslations } from "next-intl";
 
 export const MonthSlider = ({ stopMonth }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hasSpinned, setHasSpinned] = useState(false);
+
+  const t = useTranslations("Index");
 
   useEffect(() => {
     let count = 0;
@@ -16,7 +19,7 @@ export const MonthSlider = ({ stopMonth }) => {
 
       if (stopMonth !== null) {
         count++;
-        if (count > 220 && months[nextIndex] === stopMonth) {
+        if (count > 100 && months[nextIndex] === stopMonth) {
           setHasSpinned(true);
         }
       }
@@ -76,7 +79,7 @@ export const MonthSlider = ({ stopMonth }) => {
           key={i}
           style={{ transform: `translateY(${determinePlacement(i)}px)` }}
         >
-          <span>{month}</span>
+          <span>{t(`m${i + 1}`)}</span>
         </p>
       ))}
     </div>

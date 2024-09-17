@@ -13,6 +13,21 @@ const months = [
   "December",
 ];
 
+const signs = [
+  "Aries",
+  "Taurus",
+  "Gemini",
+  "Cancer",
+  "Leo",
+  "Virgo",
+  "Libra",
+  "Scorpio",
+  "Sagittarius",
+  "Capricorn",
+  "Aquarius",
+  "Pisces",
+];
+
 // const months = [
 //   "一月", // January
 //   "二月", // February
@@ -28,4 +43,4 @@ const months = [
 //   "十二月", // December
 // ];
 
-export { months };
+export { months, signs };

@@ -13,6 +13,8 @@ import {
   Taurus,
   Virgo,
 } from "../(assets)";
+import { useTranslations } from "next-intl";
+import { months, signs } from "./consts";
 
 const Event = ({ data, Componenter }) => {
   const { time, sign, month } = data;
@@ -52,6 +54,8 @@ const Event = ({ data, Componenter }) => {
     }
   };
 
+  const t = useTranslations("Index");
+
   return (
     <li className="event">
       <div className="event-hour">
@@ -62,9 +66,17 @@ const Event = ({ data, Componenter }) => {
       <div className="event-winning">
         <div className="event-sign">
           <div className="event-sign-icon">{renderAstrologyIcon(sign)}</div>
-          {sign !== "--" ? <p>{sign}</p> : <></>}
+          {sign !== "--" ? (
+            <p>{t(`s${signs.findIndex((m) => m === sign) + 1}`)}</p>
+          ) : (
+            <></>
+          )}
         </div>
-        <div className="event-month">{month}</div>
+        <div className="event-month">
+          {month !== "--"
+            ? t(`m${months.findIndex((m) => m === month) + 1}`)
+            : "--"}
+        </div>
       </div>
     </li>
   );
