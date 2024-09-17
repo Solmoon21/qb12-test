@@ -4,14 +4,12 @@ import PropTypes from "prop-types";
 const EventList = ({ events }) => {
   const time = events.length ? events[0].time : -1;
   const date =
-    time === -1
-      ? new Date().toDateString()
-      : new Date(time * 1000 + 390 * 60 * 1000).toDateString();
+    time === -1 ? new Date() : new Date(time * 1000 + 390 * 60 * 1000);
 
   return (
     <div className="day-events">
       <time className="day-events-date" dateTime={date}>
-        {date}
+        {date.toDateString()}
       </time>
       <ul className="event-list">
         {events.map((event) => (

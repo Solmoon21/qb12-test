@@ -3,9 +3,12 @@
 import Link from "next/link";
 import { HistoryIcon, HelpIcon } from "../(assets)";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const t = useTranslations("Index");
+
+  const pathname = usePathname();
 
   return (
     <div className="navbar">
@@ -16,12 +19,12 @@ export const Navbar = () => {
       </p>
       <ul className="navbar-links">
         <li>
-          <Link href="/" className="navbar-link">
+          <Link href={`${pathname}/help`} className="navbar-link">
             <HelpIcon />
           </Link>
         </li>
         <li>
-          <Link href="/history" className="navbar-link">
+          <Link href={`${pathname}/history`} className="navbar-link">
             <HistoryIcon />
           </Link>
         </li>
