@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { HistoryIcon, HelpIcon } from "../(assets)";
+import { HistoryIcon, HelpIcon, DownloadIcon } from "../(assets)";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
@@ -18,6 +18,11 @@ export const Navbar = () => {
         </Link>
       </p>
       <ul className="navbar-links">
+        <li>
+          <Link href={`${pathname}/download`} className="navbar-link">
+            <DownloadIcon />
+          </Link>
+        </li>
         <li>
           <Link href={`${pathname}/help`} className="navbar-link">
             <HelpIcon />

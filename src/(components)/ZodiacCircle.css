@@ -1,8 +1,8 @@
 .orbit {
   position: relative;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   height: 350px;
   margin: 20px 0;
 }
@@ -17,11 +17,12 @@
 }
 
 .orbit-zodiacs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
-  width: 2rem;
-  height: 2rem;
-  list-style: none;
 }
 
 .orbit-zodiac {
