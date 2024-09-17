@@ -140,7 +140,7 @@ p {
 
 .image-list {
   margin-top: 20px;
-  display: flex;
+  display: -webkit-flex;
   flex-direction: column;
   gap: 20px;
 }
