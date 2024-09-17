@@ -137,3 +137,15 @@ p {
   flex-direction: column;
   padding: 1rem;
 }
+
+.image-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-item {
+  border: 2px groove #4f4747;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}

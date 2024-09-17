@@ -1,15 +1,10 @@
 import Image from "next/image";
 import img1 from "../step1.jpg";
+import img2 from "../step2.jpg";
+import img3 from "../step3.jpg";
 
 export default function Install() {
-  // const imageUrls = [
-  //     '../'
-  //     '/images/image1.jpg',
-  //     '/images/image2.jpg',
-  //     '/images/image3.jpg',
-  //   ];
-
-  const imageUrls = [img1];
+  const imageUrls = [img1, img2, img3];
 
   return (
     <div className="image-list">
